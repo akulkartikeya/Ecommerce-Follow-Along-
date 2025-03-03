@@ -15,5 +15,16 @@ Ecommerce-Follow-Along is a full-fledged **E-Commerce Application** built using 
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB with Mongoose
 
+# Milestone 1
+
+* Completed foundation for E-Commerce Application.
+
+
+# Milestone 2
+
+* Separate folders for frontend and backend.
+* A functional Login Page in the frontend.
+* Completed setting for tailwind-css
+
 
 
