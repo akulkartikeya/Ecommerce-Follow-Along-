@@ -15,22 +15,37 @@ Ecommerce-Follow-Along is a full-fledged **E-Commerce Application** built using 
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB with Mongoose
 
-# Milestone 1
-
-* Completed foundation for E-Commerce Application.
 
 
-# Milestone 2
+## 🎯 **Project Milestones**  
 
-* Separate folders for frontend and backend.
-* A functional Login Page in the frontend.
-* Completed setting for tailwind-css
+### **🛠️ Milestone 1: Laying the Foundation**  
+✅ Initialized the project structure for both frontend and backend.  
+✅ Installed necessary dependencies for React, Node.js, and Express.  
+✅ Set up a basic server in **Node.js** using **Express.js**.  
+✅ Configured **environment variables** for secure credentials.  
 
-# Milestone 3
+---
 
-* Setting up backend folders and files.
-* Configuring and connecting the server to MongoDB.
-* Writing basic error-handling code.
+### **🛠️ Milestone 2: Structuring the Project & UI Setup**  
+✅ **Separated frontend and backend folders** for modular development.  
+✅ Created a **functional login page** in the frontend using React.js.  
+✅ Installed and configured **Tailwind CSS** for responsive UI design.  
+
+---
+
+### **🛠️ Milestone 3: Backend Configuration & Database Connection**  
+✅ Organized the **backend folder structure** for scalability.  
+✅ Connected the **server to MongoDB** using Mongoose.  
+✅ Implemented **error-handling middleware** for API stability.  
+
+---
+
+### **🛠️ Milestone 4: User Management & File Handling**  
+✅ Created the **User Model** in Mongoose to define user data structure.  
+✅ Developed the **User Controller** to manage user authentication (signup, login).  
+✅ Implemented **Multer for file handling**, allowing user profile and product image uploads. 
+
 
 
 
