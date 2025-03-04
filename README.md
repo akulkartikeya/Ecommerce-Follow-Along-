@@ -26,5 +26,11 @@ Ecommerce-Follow-Along is a full-fledged **E-Commerce Application** built using 
 * A functional Login Page in the frontend.
 * Completed setting for tailwind-css
 
+# Milestone 3
+
+* Setting up backend folders and files.
+* Configuring and connecting the server to MongoDB.
+* Writing basic error-handling code.
+
 
 
