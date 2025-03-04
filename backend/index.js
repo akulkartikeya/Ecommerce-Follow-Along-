@@ -12,6 +12,8 @@ const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
 
 const PORT = process.env.PORT;
 
+const useRouter = require("./controller/userRouter");
+
 app.get("/",(req,res)=>{
     try {
         res.send({message:"This is E-commerce Follow Along Backend"});
@@ -20,6 +22,7 @@ app.get("/",(req,res)=>{
     }
 })
 
+app.use("/user",useRouter);
 
 app.listen(PORT,async ()=>{
     try {
