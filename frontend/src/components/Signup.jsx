@@ -56,6 +56,11 @@ const Signup = () => {
         }
     }
 
+
+
+
+
+
   return (
     <div>
         <form onSubmit={handleSignup} className={styles.formbox}>
