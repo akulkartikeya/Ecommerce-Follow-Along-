@@ -47,5 +47,10 @@ Ecommerce-Follow-Along is a full-fledged **E-Commerce Application** built using 
 ✅ Implemented **Multer for file handling**, allowing user profile and product image uploads. 
 
 
+### **🛠️ Milestone 5: User Registration & File Handling**  
+✅ Created the **Sign up page** in React and added code for signup backend also.  
+✅ Added the **Sign up page** validation in (signup, login).   
+
+
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./login.css"
+import styles from "./login.module.css";
 const Login = () => {
     const[loginData,setLoginData] = useState({
         email:"",
@@ -28,7 +28,7 @@ const Login = () => {
 
   return (
     <div>
-        <form onSubmit={handleLogin} >
+        <form onSubmit={handleLogin} className={styles.formbox} >
             <label htmlFor="">Email</label>
             <input type="email" value={loginData.email} name='email' onChange={handleInput} placeholder='Email...' />
             <label>password</label>

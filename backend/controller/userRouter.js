@@ -5,16 +5,25 @@ const { userImage } = require("../middleware/multer");
 const userRouter = express.Router();
 
 userRouter.post("/signup",userImage.single("image"),async(req,res)=>{
+
     try {
+        console.log(req.file);
         const{name,email,password} = req.body;
+        console.log(name,email,password)
         if(!name || !email || !password){
             return res.status(400).send({message:"All details are required"});
         }
         const user =await userModel.findOne({email});
+        console.log(user)
         if(user){
             return res.status(200).send({message:"User Already Registered"});
         }
-        await userModel.insertOne({name,email,password});
+        if(req.file){
+            await userModel.insertOne({name,email,password});
+        }else{
+            await userModel.insertOne({name,email,password});
+        }
+        
         return res.status(200).send({message:"user registered sucessfully"});
     } catch (error) {
         return res.status(500).send({error});
