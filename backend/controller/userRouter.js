@@ -1,5 +1,6 @@
 const express = require("express");
 const userModel = require("../models/userModel");
+const bcrypt = require("bcryptjs");
 const { userImage } = require("../middleware/multer");
 
 const userRouter = express.Router();
@@ -18,11 +19,12 @@ userRouter.post("/signup",userImage.single("image"),async(req,res)=>{
         if(user){
             return res.status(200).send({message:"User Already Registered"});
         }
-        if(req.file){
-            await userModel.insertOne({name,email,password});
-        }else{
-            await userModel.insertOne({name,email,password});
-        }
+
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(password, salt);
+
+        await userModel.insertOne({name,email,password:hash});
+        
         
         return res.status(200).send({message:"user registered sucessfully"});
     } catch (error) {
@@ -36,10 +38,13 @@ userRouter.post("/login",async(req,res)=>{
         if(!email || !password){
             return  res.status(400).send({message:"All details are required"});
         }
-        const user =await userModel.findOne({email,password});
-        if(user){
+
+        const user =await userModel.findOne({email});
+        const matchedPass =  bcrypt.compareSync(password, hash);
+        if(user && matchedPass){
             return  res.status(200).send({message:"User logged in sucessfully"});
         }
+        return  res.status(401).send({message:"Entered details are wrong"});
     } catch (error) {
         return res.status(500).send({error});
     }
