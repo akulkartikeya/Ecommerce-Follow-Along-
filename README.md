@@ -52,5 +52,7 @@ Ecommerce-Follow-Along is a full-fledged **E-Commerce Application** built using 
 ✅ Added the **Sign up page** validation in (signup, login).   
 
 
-
+### **🛠️ Milestone 6: Password Hashing By Using Bcryptjs**  
+✅ added the **password encryption**  in backend signup page.  
+✅ added comparision for checking password is correct or not in login backend.  
 
