@@ -57,3 +57,9 @@ In this milestone, we focused on:
   # Milestone 6 : **Password Hashing by Using Bcryptjs**
   - added the **password encryption** in backend signup page.
   - added comparision for checking password is correct or not in login backend.
+  
+  # Milstone 7 : **Create Login Endpoint**
+ - Accept user credentials (email/username and password).
+ - Retrieve the corresponding user from the database.
+ - Use bcrypt to hash the entered password.
+ - Compare it with the stored hashed password for authentication
