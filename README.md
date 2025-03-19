@@ -63,3 +63,15 @@ In this milestone, we focused on:
  - Retrieve the corresponding user from the database.
  - Use bcrypt to hash the entered password.
  - Compare it with the stored hashed password for authentication
+
+
+
+
+
+
+
+ # Milstone 9 : ** Created Form for product uploads**
+ - Created the **AddProduct** page in frontend.
+ - Added form validation in AddProduct page.
+
+ 
