@@ -74,4 +74,7 @@ In this milestone, we focused on:
  - Created the **AddProduct** page in frontend.
  - Added form validation in AddProduct page.
 
- 
+# Milstone 10 : ** Created Schemas Product Upload** 
+- Created **ProductModal** in backend
+- Created **ProductRouter** page in Backend
+- Handled file uploads by multer inside middleware multer.
