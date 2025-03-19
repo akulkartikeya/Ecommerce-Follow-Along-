@@ -62,3 +62,8 @@ Ecommerce-Follow-Along is a full-fledged **E-Commerce Application** built using 
 
 ### **🛠️ Milestone 8: Product Page In Frontend**  
 ✅ added the **Product Page**  in Frontend as a Homepage.  
+
+
+### **🛠️ Milestone 9: Created Form For Product Upload**  
+✅ Created the **AddProducts** page  in Frontend.  
+✅ Added form validation in AddProducts page.

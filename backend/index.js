@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json());
+
 const mongoose = require("mongoose");
 
 const dotenv = require("dotenv");
@@ -32,7 +34,7 @@ app.use("/user",useRouter);
 
 app.listen(PORT,async ()=>{
     try {
-       await mongoose.connect(`mongodb+srv://abhishektiwari136136:${MONGO_PASSWORD}@cluster0.zsqn5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);
+       await mongoose.connect(`mongodb+srv://abhishektiwari136136:${MONGO_PASSWORD}@cluster0.55lt4.mongodb.net/`);
        console.log("Connected sucessfully");
     } catch (error) {
         console.log("Something went wrong not able to connect to server",error);
