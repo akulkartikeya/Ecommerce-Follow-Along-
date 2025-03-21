@@ -22,6 +22,9 @@ const PORT = process.env.PORT || 8080;
 
 const useRouter = require("./controller/userRouter");
 
+const productRouter = require("./controller/productRouter");
+
+
 app.get("/",(req,res)=>{
     try {
         res.send({message:"This is E-commerce Follow Along Backend"});
@@ -31,6 +34,8 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/user",useRouter);
+
+app.use("/product",productRouter);
 
 app.listen(PORT,async ()=>{
     try {

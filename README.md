@@ -67,3 +67,12 @@ Ecommerce-Follow-Along is a full-fledged **E-Commerce Application** built using 
 ### **🛠️ Milestone 9: Created Form For Product Upload**  
 ✅ Created the **AddProducts** page  in Frontend.  
 ✅ Added form validation in AddProducts page.
+
+### **🛠️ Milestone 10: Created Schema Product Upload** 
+✅ Created **ProductModel** in backend.
+✅ Created the **productRouter** page  in Backend.  
+✅ Handeled file uploads by multer inside middleware multer.
+
+### **🛠️ Milestone 11: Created Homepage For Product** 
+✅ Created **Home Page** for dynamic products presentation.
+✅ added the **backend** part for handeling products (created endpoint to get products).  
