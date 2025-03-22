@@ -76,3 +76,7 @@ Ecommerce-Follow-Along is a full-fledged **E-Commerce Application** built using 
 ### **🛠️ Milestone 11: Created Homepage For Product** 
 ✅ Created **Home Page** for dynamic products presentation.
 ✅ added the **backend** part for handeling products (created endpoint to get products).  
+
+### **🛠️ Milestone 12: Showing product according to user** 
+✅ Created **Product Page** for dynamic products presentation according to user mail.
+✅ Created backend for specific user products. 
