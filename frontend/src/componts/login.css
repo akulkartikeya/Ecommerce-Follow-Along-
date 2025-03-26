@@ -3,3 +3,8 @@ input{
     background-color: white;
     color: black;
 }
+form{
+    border: 2px solid;
+    display: flex;
+    flex-wrap: wrap;
+}

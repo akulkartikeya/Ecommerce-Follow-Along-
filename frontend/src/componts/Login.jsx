@@ -1,46 +1,51 @@
 import React, { useState } from 'react'
-import './Login.css'
+import "./Login.css"
+import axios from 'axios'
 
 const Login = () => {
-
     const[loginData,setLoginData] = useState({
         email:"",
-        password:"",
+        password:""
     })
 
     function handleInput(e){
-        setLoginData({...loginData,[e.target.name]:e.target.value})
+        setLoginData({...loginData,[e.target.name]:e.target.name})
     }
 
-    function handleLogin(event){
+
+    async function handleLogin(event){
         event.preventDefault();
-        if(!loginData.email){
+        if(loginData.email==""){
             alert("Please enter email...");
             return;
         }
 
-        if(!loginData.password){
-            alert("Please enter Password...");
+        if(loginData.password==""){
+            alert("Please enter password...");
             return;
         }
+        try {
+          const checkUser = await axios.post("http://localhost:8080/user/login",loginData);
+          console.log(checkUser);
+          localStorage.setItem("follow-along-auth-token",JSON.stringify(checkUser.data.token));
+          alert("You are successfully logged in");
 
-        alert("Youre successfully logged in!!");
+        } catch (error) {
+          console.log(error);
+          alert("Something went wrong while logging in");
+        }
+
+        
     }
-    
   return (
-    <div className='body'>
-        <h1>Sign in</h1>
-        <form onSubmit={handleLogin}>
-            <label htmlFor="">Enter Email</label>
-            <br />
-            <input type="email" value={loginData.email} name='email' onChange={handleInput} placeholder='Email...' />
-            <br />
-            <label htmlFor="">Enter Password</label>
-            <br />
-            <input type="password" value={loginData.password} name='password' onChange={handleInput} placeholder='Password...'/>
-            <br />
-            <input type="submit" />
-        </form>
+    <div>
+      <form onSubmit={handleLogin}>
+        <label htmlFor="">Email</label>
+        <input type="email" value={loginData.email} name='email' onChange={handleInput} placeholder='Email...'/>
+        <label>password</label>
+        <input type="password" value={loginData.password} name="password" onChange={handleInput} placeholder='password...'/>
+        <input type="submit"/>
+      </form>
     </div>
   )
 }

@@ -64,11 +64,9 @@ In this milestone, we focused on:
  - Use bcrypt to hash the entered password.
  - Compare it with the stored hashed password for authentication
 
-
-
-
-
-
+# Milstone 8:
+- Added the product page in Frontend.
+- Added from vaidation in Add product page.
 
  # Milstone 9 : ** Created Form for product uploads**
  - Created the **AddProduct** page in frontend.
@@ -78,3 +76,13 @@ In this milestone, we focused on:
 - Created **ProductModal** in backend
 - Created **ProductRouter** page in Backend
 - Handled file uploads by multer inside middleware multer.
+
+# Milestone 11
+
+* Created HomePage for dynamic products presentation.
+* Added the backend part for handling products(created endpoint to get products).
+
+# Milesstone 12
+
+* Created ProductPage for dynamic product presentation according to user mail.
+* Created backend for specific user products.
