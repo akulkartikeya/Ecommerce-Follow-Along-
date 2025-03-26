@@ -39,24 +39,7 @@ app.get("/",(req,res)=>{
 
 app.use("/user",useRouter);
 
-app.use("/product",async(req,res,next)=>{
-    try {
-        const auth = req.headers.authorization;
-        if(!auth){
-            return res.status(401).send({message:"Please login"});
-        }
-        const decoded = jwt.verify(auth, process.env.JWT_PASSWORD);
-        const user = await userModel.findOne({_id:decoded.id});
-        if(!user){
-            return res.status(401).send({message:"Please register first"});
-        }
-
-        console.log(decoded) 
-        next();
-    } catch (error) {
-      return res.status(500).send({message:"something went wrong"});  
-    }
-},productRouter);
+app.use("/product",productRouter);
 
 app.listen(PORT,async ()=>{
     try {
