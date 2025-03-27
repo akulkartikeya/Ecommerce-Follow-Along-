@@ -11,7 +11,7 @@ const userImageStore = multer.diskStorage({
     }
 });
 
-const ProductImagesStore = multer.diskStorage({
+const productImagesStore = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.join(__dirname, "../uploads/productImages")); 
     },
@@ -21,56 +21,24 @@ const ProductImagesStore = multer.diskStorage({
     }
 });
 
-const userImage = multer({ 
-    storage: userImageStore ,
-    limits:{fileSize:5*1024*1024},
-    fileFilter:(req,file,cb)=>{
-        const extention = path.extname(file.originalname).toLowerCase();
-        const mimetype = file.mimetype;
-        const allowedExtention = {
-            jpeg:true,
-            png:true,
-            jpg:true
-        }
-
-        const allowedMimetype = {
-            "image/jpeg":true,
-            "image/png":true,
-            "image/jpg":true,
-
-        }
-        if(!allowedExtention[extention] && !allowedMimetype[mimetype]){
-            cb(new Error("File extention not allowed"))
-        }else{
-            cb(null,true)
-        }
+const fileFilter = (req, file, cb) => {
+    const allowedMimeTypes = ["image/jpeg", "image/png", "image/jpg"];
+    if (!allowedMimeTypes.includes(file.mimetype)) {
+        return cb(new Error("Only JPEG, PNG, and JPG formats are allowed"), false);
     }
+    cb(null, true);
+};
+
+const userImage = multer({ 
+    storage: userImageStore,
+    limits: { fileSize: 5 * 1024 * 1024 },
+    fileFilter
 });
 
 const productImages = multer({ 
-    storage: ProductImagesStore ,
-    limits:{fileSize:5*1024*1024},
-    fileFilter:(req,file,cb)=>{
-        const extention = path.extname(file.originalname).toLowerCase();
-        const mimetype = file.mimetype;
-        const allowedExtention = {
-            jpeg:true,
-            png:true,
-            jpg:true
-        }
-
-        const allowedMimetype = {
-            "image/jpeg":true,
-            "image/png":true,
-            "image/jpg":true,
-
-        }
-        if(!allowedExtention[extention] && !allowedMimetype[mimetype]){
-            cb(new Error("File extention not allowed"))
-        }else{
-            cb(null,true)
-        }
-    }
+    storage: productImagesStore,
+    limits: { fileSize: 5 * 1024 * 1024 },
+    fileFilter
 });
-module.exports = { userImage, productImages };
 
+module.exports = { userImage, productImages };
