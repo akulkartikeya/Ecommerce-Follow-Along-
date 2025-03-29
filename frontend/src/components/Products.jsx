@@ -5,10 +5,10 @@ import styles from "./products.module.css";
 const Products = () => {
     const [products,setProducts] = useState([]);
     function getData(){
-        axios.get("https://fakestoreapi.com/products")
+        axios.get("http://localhost:8080/allproducts")
         .then((data)=>{
             console.log(data);
-            setProducts(data.data);
+            setProducts(data.data.products);
         }).catch((err)=>{
             console.log(console.error(err));
         })

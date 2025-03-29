@@ -4,6 +4,8 @@ const app = express();
 
 app.use(express.json());
 
+const path = require("path");
+
 const mongoose = require("mongoose");
 
 const dotenv = require("dotenv");
@@ -29,6 +31,7 @@ const useRouter = require("./controller/userRouter");
 const productRouter = require("./controller/productRouter");
 
 const allProductRouter = require("./controller/allProducts");
+
 
 app.get("/",(req,res)=>{
     try {
@@ -62,8 +65,10 @@ app.use("/product",async (req, res, next) => {
         return res.status(400).json({ message: "Invalid Token", error });
     }
 },productRouter);
-app.user("/allproducts",allProductRouter);
 
+app.use("/allproducts",allProductRouter);
+
+app.use("/uploads",express.static(path.join(__dirname,"uploads")));
 
 app.listen(PORT,async ()=>{
     try {
@@ -73,6 +78,3 @@ app.listen(PORT,async ()=>{
         console.log("Something went wrong not able to connect to server",error);
     }
 });
-
-
-
