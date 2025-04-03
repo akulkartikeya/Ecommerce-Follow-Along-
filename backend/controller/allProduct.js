@@ -13,6 +13,11 @@ allProductRouter.get("/",async(req,res)=>{
     }
 })
 
+
+
+
+
+
 allProductRouter.get("/:id",async(req,res)=>{
     try {
         const {id} = req.params;
