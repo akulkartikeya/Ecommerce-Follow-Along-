@@ -85,7 +85,6 @@ productRouter.delete("/delete/:id",async(req,res)=>{
             return res.status(400).send({message:"please provide id"});
         }
         
-        
 
        
 
