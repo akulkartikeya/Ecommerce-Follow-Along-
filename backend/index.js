@@ -22,10 +22,6 @@ const cartRouter = require("./controller/cartProducts");
 
 app.use(cors());
 
-const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
-
-console.log(MONGO_PASSWORD)
-
 const PORT = process.env.PORT || 8080;
 
 const useRouter = require("./controller/userRouter");
@@ -159,7 +155,7 @@ app.use("/uploads",express.static(path.join(__dirname,"uploads")));
 
 app.listen(8080,async ()=>{
     try {
-       await mongoose.connect(`mongodb+srv://abhishektiwari136136:${MONGO_PASSWORD}@cluster0.55lt4.mongodb.net/`);
+       await mongoose.connect(`mongodb+srv://akulkarthikeya006:rhw4Ev63Kk3yhVTW@cluster0followalong.i7n0xp1.mongodb.net/`);
        console.log("Connected sucessfully");
     } catch (error) {
         console.log("Something went wrong not able to connect to server",error);
