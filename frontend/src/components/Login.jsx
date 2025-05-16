@@ -35,7 +35,9 @@ const Login = () => {
     try {
       const checkUser = await axios.post(
         "http://localhost:8080/user/login",
-        loginData
+        loginData,{
+          withCredentials: true,
+        }
       );
       console.log(checkUser);
       localStorage.setItem(
